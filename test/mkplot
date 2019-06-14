@@ -1,0 +1,22 @@
+reset
+save_encoding = GPVAL_ENCODING
+set termoption enhanced
+set title '{/=20 D=|M|/(Gamma-1)}'
+set term png size 1000,460
+set output 'funQ.png'
+set key bottom
+set encoding utf8
+set xlabel '{/=20 Q}'
+set ylabel '{/=20 f(Q)}'
+set xrange[-10:10]
+set yrange[0:6]
+set arrow from 0,-50 to 0,20 nohead lc rgb 'black'
+plot 'type0.dat' using 1:2 ti'{/=15 type0}' pointsize 2 lc rgb 'blue', 'type1.dat' using 1:2 ti'{/=15 type1}' with line lw 3 lc rgb 'red', 0 lc rgb 'black' ti''
+
+
+set term png size 1000,460
+set output 'dfunQ.png'
+set ylabel '{/=20 df/dQ}'
+unset arrow
+set arrow from 0,-0.6 to 0,0.8 nohead lc rgb 'black'
+plot 'type0.dat' using 1:3 ti'{/=15 type0}' pointsize 2 lc rgb 'blue', 'type1.dat' using 1:3 ti'{/=15 type1}' with line lw 3 lc rgb 'red', 0 lc rgb 'black' ti''

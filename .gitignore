@@ -1,0 +1,9 @@
+*.o
+a.out
+bin/*/*/*
+*.dat
+*.swp
+*~
+*.png
+src/tags
+Makedepend
